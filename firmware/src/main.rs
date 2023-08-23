@@ -5,7 +5,7 @@ mod hardware;
 mod panic;
 
 use crate::hardware::Hardware;
-use nrf52832_hal::prelude::*;
+use nrf52840_hal::prelude::*;
 
 #[cortex_m_rt::entry]
 fn main() -> ! {
