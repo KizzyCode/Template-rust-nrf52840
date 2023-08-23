@@ -1,6 +1,6 @@
 //! Provides access handles for hardware/peripheral access
 
-use nrf52832_hal::{
+use nrf52840_hal::{
     gpio::{
         p0::{Parts, P0_06},
         Level, Output, PushPull,
