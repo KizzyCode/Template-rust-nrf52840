@@ -1,0 +1,38 @@
+[package]
+name = "playground"
+version = "0.1.0"
+edition = "2021"
+resolver = "2"
+authors = ["KizzyCode Software Labs./Keziah Biermann <development@kizzycode.de>"]
+keywords = []
+categories = []
+description = "Pure Rust nrf52840 playground"
+license = "BSD-2-Clause OR MIT"
+readme = "README.md"
+
+
+[[bin]]
+name = "firmware"
+path = "src/main.rs"
+
+
+[features]
+default = []
+
+
+[dependencies]
+cortex-m = "0.7.7"
+cortex-m-rt = "0.7.3"
+embedded-hal = "0.2.7"
+nrf52832-hal = "0.16.0"
+
+
+[profile.dev]
+overflow-checks = true
+opt-level = 0
+debug = 2
+
+[profile.release]
+debug = 0
+overflow-checks = true
+strip = "symbols"
