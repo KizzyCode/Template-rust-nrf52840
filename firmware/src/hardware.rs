@@ -1,15 +1,11 @@
-//! Provides access handles for hardware/peripheral access
+//! Provides hardware/peripheral access
 
-use nrf52840_hal::{
-    gpio::{
-        p0::{Parts, P0_06},
-        Level, Output, PushPull,
-    },
-    pac::{CorePeripherals, Peripherals},
-    Delay,
-};
+use nrf52840_hal::gpio::p0::{Parts, P0_06};
+use nrf52840_hal::gpio::{Level, Output, PushPull};
+use nrf52840_hal::pac::{CorePeripherals, Peripherals};
+use nrf52840_hal::Delay;
 
-/// A hardware handle
+/// A hardware provider
 pub struct Hardware {
     /// BSP replacement for the HAL [`Pins`](rp2040_hal::gpio::Pins) type
     pub led: P0_06<Output<PushPull>>,

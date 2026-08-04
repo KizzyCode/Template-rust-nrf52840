@@ -5,7 +5,8 @@ mod hardware;
 mod panic;
 
 use crate::hardware::Hardware;
-use nrf52840_hal::prelude::*;
+use embedded_hal::delay::DelayNs;
+use embedded_hal::digital::OutputPin;
 
 #[cortex_m_rt::entry]
 fn main() -> ! {
@@ -17,8 +18,8 @@ fn main() -> ! {
     // Blink the LED at 1 Hz
     loop {
         led.set_high().expect("failed to set LED pin state");
-        delay.delay_ms(500u16);
+        delay.delay_ms(500);
         led.set_low().expect("failed to set LED pin state");
-        delay.delay_ms(500u16);
+        delay.delay_ms(500);
     }
 }
